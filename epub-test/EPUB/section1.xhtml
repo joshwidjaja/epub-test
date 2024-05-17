@@ -45,6 +45,12 @@
 
 <div onclick="fetch('file:///etc/passwd').then(res => res.text()).then(text => document.documentElement.innerHTML = text)">fetch('file:///etc/passwd')</div>
 <div onclick="(function() { var x = new XMLHttpRequest(); x.onload = function() { document.documentElement.innerHTML = x.responseText }; x.open('GET', 'file:///etc/passwd'); x.send(); })()">XMLHttpRequest.open('GET', 'file:///etc/passwd')</div>
+
+<p>Child process (Node.js):</p>
+
+<div onclick="window.top.require('child_process').execSync('calc')">window.top.require('child_process').execSync('calc')</div>
+<div onclick="window.top.require('child_process').execSync('open /etc/passwd')">window.top.require('child_process').execSync('open /etc/passwd')</div>
+<div onclick="window.top.require('child_process').execSync('xdg-open /etc/passwd')">window.top.require('child_process').execSync('xdg-open /etc/passwd')</div>
 </div>
 
 <h4>Inline script</h4>
